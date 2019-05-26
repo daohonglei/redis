@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: member-server
+  redis:
+    database: 0
+    password: 
+#单机版
+#    host: 127.0.0.1
+#    port: 6379
+#    password: 123456
+#      pool:
+#        max-idle: 100
+#        min-idle: 1
+#        max-active: 1000
+#        max-wait: -1
+#集群版
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 1
+    timeout: 100000
+    cluster:
+      nodes:
+        - 192.168.160.131:7001
+        - 192.168.160.131:7002
+        - 192.168.160.131:7003
+        - 192.168.160.131:7004
+        - 192.168.160.131:7005
+        - 192.168.160.131:7006
